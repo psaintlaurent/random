@@ -1,1 +1,1 @@
-alias gitloc='z=0; for i in $(for i in $(git ls-files); do wc -l $i | rev | cut -d" " -f2 | rev; done) ; do z=$(($i +$z)); done; echo $z'
+alias gitloc=' gf=$(git ls-files); for i in $gf; do wc -l $i | rev | cut -d" " -f1,2 | rev ; done ;  z=0; for i in $(for i in $gf; do wc -l $i | rev | cut -d" " -f2 | rev; done) ; do z=$(($i +$z)); done; echo $z "TOTAL LINES OF CODE"'
